@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello Payroll</title>
+    <link rel="stylesheet" href="/assets/style.css">
+
+    {{> meta}}
+
+    <script type="module">
+      import Cookies from 'js-cookie';
+      import nmbr from '@nmbrco/components';
+
+      const partnerId = import.meta.env.NMBR_PARTNER_ID;
+      const companyId = Cookies.get('cid');
+
+      // Initialize Nmbr Components as early as you can to load critical
+      // dependencies and improve perceived performance.
+      window.components = nmbr.initialize({
+        partnerId,
+        companyId,
+        signingUrl: "/sign_nmbr_request",
+        sandbox: true,
+      });
+    </script>
+  </head>
+
+  <body>
+    {{> topbar}}
+    <main>
+      {{> sidebar}}
+
+      <div id="iframe-wrapper">
+        <div id="iframe-container"></div>
+      </div>
+    </main>
+
+    <script type="module">
+      const container = document.querySelector("#iframe-container");
+
+      components.load('run', container);
+    </script>
+  </body>
+</html>

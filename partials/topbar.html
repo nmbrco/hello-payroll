@@ -1,0 +1,176 @@
+<header>
+  <img src="/assets/logo.png" alt="corporate logo">
+  <nav aria-labelledby="Top navigation">
+    <ul>
+      <li>
+        <button type="button" id="btn-change">Change Company</button>
+        <div id="tooltip-change" class="tooltip">
+          <span class="text">Change the company you are viewing</span>
+          <div class="arrow"></div>
+        </div>
+      </li>
+      <li>
+        <button type="button" id="btn-share">Share</button>
+        <div id="tooltip-share" class="tooltip">
+          <span class="text">Generate a link to share company data</span>
+          <div class="arrow"></div>
+        </div>
+      </li>
+      <li>
+        <button type="button" id="btn-logout">Logout</button>
+        <div id="tooltip-logout" class="tooltip">
+          <span class="text">To save company data, copy the Share link</span>
+          <div class="arrow"></div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+<script type="module" defer>
+  import Cookies from 'js-cookie';
+  import * as float from '@floating-ui/dom';
+
+  // Get the company ID from the URL query string
+  const searchParams = new URLSearchParams(window.location.search);
+  const companyId = searchParams.get('cid') ?? Cookies.get('cid');
+
+  // Remove the company ID from the URL query string
+  searchParams.delete('cid');
+
+  // Set the company ID as a cookie
+  if (companyId === 'undefined' || companyId === 'null' || companyId === '') {
+    Cookies.remove('cid');
+  } else if (companyId) {
+    Cookies.set('cid', companyId, { sameSite: 'Strict', expires: 365 });
+  }
+
+  // Update the URL without the company ID
+  if (window.history.replaceState) {
+    const { protocol, host, pathname } = window.location;
+    const url = `${protocol}//${host}${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
+
+    window.history.replaceState({ path: url }, '', url);
+  }
+
+  // Initialize tooltips
+  const changeButton = document.querySelector('#btn-change');
+  const changeTooltip = document.querySelector('#tooltip-change');
+
+  const shareButton = document.querySelector('#btn-share');
+  const shareTooltip = document.querySelector('#tooltip-share');
+
+  const logoutButton = document.querySelector('#btn-logout');
+  const logoutTooltip = document.querySelector('#tooltip-logout');
+
+  const computeTooltipPosition = async (button, tooltip) => {
+    const arrowElement = tooltip.querySelector('.arrow');
+    const { x, y, middlewareData: { arrow } } = await float.computePosition(button, tooltip, {
+      placement: 'bottom-start',
+      middleware: [
+        float.offset(8),
+        float.arrow({ element: arrowElement }),
+      ],
+    });
+
+    tooltip.style.setProperty('--x', `${x}px`);
+    tooltip.style.setProperty('--y', `${y}px`);
+
+    Object.assign(arrowElement.style, {
+      right: arrow.x != null ? `${arrow.x}px` : '',
+    });
+  };
+
+  const setTooltipText = (tooltip, text) => {
+    const textElement = tooltip.querySelector('.text');
+
+    if (textElement) {
+      textElement.textContent = text;
+    } else {
+      tooltip.textContent = text;
+    }
+  };
+
+  const registerTooltip = (button, tooltip, onMouseEnter) => {
+    button.addEventListener('mouseenter', (event) => {
+      requestAnimationFrame(() => { tooltip.classList.add('show') });
+
+      if (onMouseEnter instanceof Function) {
+        onMouseEnter(tooltip);
+      }
+    }, { capture: true, passive: true });
+
+    button.addEventListener('mouseleave', (event) => {
+      requestAnimationFrame(() => tooltip.classList.remove('show'));
+    }, { capture: true, passive: true });
+
+    new ResizeObserver(() => computeTooltipPosition(button, tooltip))
+      .observe(document.documentElement);
+
+    computeTooltipPosition(button, tooltip);
+  };
+
+  registerTooltip(changeButton, changeTooltip);
+
+  registerTooltip(shareButton, shareTooltip, (tooltip) => {
+    if (Cookies.get('cid')) {
+      setTooltipText(tooltip, 'Generate a custom link with shared company data');
+    } else {
+      setTooltipText(tooltip, 'Generate a custom share link');
+    }
+  });
+
+  registerTooltip(logoutButton, logoutTooltip, (tooltip) => {
+    if (Cookies.get('cid')) {
+      logoutButton.removeAttribute('disabled');
+      setTooltipText(tooltip, 'To save company data, copy the Share link');
+    } else {
+      logoutButton.setAttribute('disabled', true);
+      setTooltipText(tooltip, 'You are not logged in');
+    }
+  });
+
+  changeButton.addEventListener('click', () => {
+    const companyId = prompt('Enter the company ID');
+
+    if (!companyId || companyId === 'undefined' || companyId === 'null' || companyId === '') {
+      Cookies.remove('cid');
+      window.location.reload();
+
+      return;
+    }
+
+    Cookies.set('cid', companyId, { expires: 365 });
+    components.reinitialize({ companyId });
+  });
+
+  shareButton.addEventListener('click', () => {
+    const companyId = Cookies.get('cid');
+    const url = new URL(window.location.href);
+
+    if (companyId) {
+      url.searchParams.set('cid', companyId);
+    }
+
+    if (navigator.share) {
+      // use system share
+      navigator.share({
+        title: 'Embed Payroll w/ Nmbr Components',
+        url: url.href,
+      });
+    } else if (navigator.clipboard) {
+      // copy url to clipboard
+      navigator.clipboard.writeText(url.href);
+      setTooltipText(shareTooltip, 'Copied to clipboard!');
+
+      // TODO - show tooltip good
+    } else {
+      // fallback to alert
+      alert(`Share this URL: ${url.href}`);
+    }
+  });
+
+  logoutButton.addEventListener('click', () => {
+    Cookies.remove('cid');
+    window.location.reload();
+  });
+</script>

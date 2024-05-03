@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply flex flex-col min-h-screen;
+  }
+
+  header {
+    @apply flex justify-between items-center;
+    @apply h-16 py-1 px-4 border-b-2;
+    @apply bg-gray-100;
+
+    > nav > ul {
+      @apply flex gap-4;
+
+      > li {
+        @apply text-blue-500 relative;
+
+        button:hover {
+          @apply underline cursor-pointer;
+        }
+      }
+    }
+
+    img {
+      @apply object-contain;
+
+      max-height: 85%;
+    }
+  }
+
+  main {
+    @apply flex flex-1;
+
+    > aside {
+      @apply min-w-56 py-6 px-4 border-r-2;
+      @apply bg-gray-50 border-gray-200;
+    }
+
+    > aside > nav > ul {
+      @apply flex flex-col gap-6;
+
+      > li > a {
+        @apply flex items-center gap-3;
+
+        svg {
+          @apply h-5 text-gray-400;
+        }
+      }
+
+      > li,
+      > li a {
+        @apply text-gray-500;
+      }
+    }
+
+    > #iframe-wrapper {
+      @apply flex-1 bg-gray-100 p-4;
+
+      > #iframe-container {
+        @apply bg-gray-50 border-2 border-gray-200 h-full;
+      }
+    }
+  }
+
+  a {
+    &[disabled] {
+      @apply cursor-not-allowed;
+    }
+
+    &:not([disabled]):hover {
+      @apply underline;
+    }
+
+    &.active {
+      @apply text-blue-500;
+    }
+  }
+
+  #create-company-box {
+    @apply flex flex-col gap-4 m-4 lg:mx-10 lg:my-8 p-8 items-center;
+    @apply max-w-2xl mx-auto;
+    @apply border-2 border-blue-300;
+    @apply text-gray-700;
+
+    > * {
+      @apply m-0;
+    }
+
+    > h1 {
+      @apply text-2xl font-bold text-gray-950;
+    }
+
+    > form {
+      @apply flex;
+
+      > input {
+        @apply flex-1 p-2;
+        @apply border-2 border-gray-300 border-r-0 pr-0;
+
+        min-width: 28rch;
+      }
+
+      > button {
+        @apply p-2 bg-blue-500 text-white;
+
+        min-width: 8rch;
+      }
+    }
+  }
+
+  .tooltip {
+    @apply w-max absolute top-0 right-0 p-2 rounded-sm;
+    @apply bg-gray-800 text-white font-normal text-xs;
+
+    --x: 0;
+    --y: 0;
+
+    opacity: 0;
+    transform: none;
+    pointer-events: none;
+
+    transform: translate(var(--x), calc(var(--y) * 0.75));
+    transition:
+      opacity 0.3s ease-in-out,
+      transform 0.3s ease-in-out;
+
+    &.show {
+      transform: translate(var(--x), var(--y));
+      opacity: 1;
+    }
+
+    > .arrow {
+      @apply absolute bg-inherit w-2 h-2;
+      transform: rotate(45deg);
+
+      top: -1px;
+    }
+  }
+
+  button[disabled] {
+    &,
+    &:hover {
+      @apply cursor-not-allowed;
+    }
+  }
+}
