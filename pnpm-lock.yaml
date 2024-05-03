@@ -9,19 +9,19 @@ importers:
   .:
     dependencies:
       '@floating-ui/dom':
-        specifier: ^1.6.3
+        specifier: ^1.6.4
         version: 1.6.4
       '@nmbrco/components':
-        specifier: 0.6.0
-        version: 0.6.0
+        specifier: 0.7.0
+        version: 0.7.0
       '@nmbrco/sdk':
-        specifier: 0.5.2-rc.1
-        version: 0.5.2-rc.1(monocle-ts@2.3.13(fp-ts@2.16.5))(newtype-ts@0.3.5(fp-ts@2.16.5)(monocle-ts@2.3.13(fp-ts@2.16.5)))
+        specifier: 0.6.0
+        version: 0.6.0(monocle-ts@2.3.13(fp-ts@2.16.5))(newtype-ts@0.3.5(fp-ts@2.16.5)(monocle-ts@2.3.13(fp-ts@2.16.5)))
       cookie-parser:
         specifier: ^1.4.6
         version: 1.4.6
       express:
-        specifier: ^4.18.2
+        specifier: ^4.19.2
         version: 4.19.2
       js-cookie:
         specifier: ^3.0.5
@@ -36,7 +36,7 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       vite:
-        specifier: ^5.0.12
+        specifier: ^5.2.11
         version: 5.2.11(@types/node@20.12.8)
     devDependencies:
       '@swc/core':
@@ -52,7 +52,7 @@ importers:
         specifier: ^3.0.6
         version: 3.0.6
       '@types/jsonwebtoken':
-        specifier: ^9.0.5
+        specifier: ^9.0.6
         version: 9.0.6
       '@types/multer':
         specifier: ^1.4.11
@@ -64,10 +64,10 @@ importers:
         specifier: ^16.4.5
         version: 16.4.5
       postcss:
-        specifier: ^8.4.31
+        specifier: ^8.4.38
         version: 8.4.38
       tailwindcss:
-        specifier: ^3.4.1
+        specifier: ^3.4.3
         version: 3.4.3(ts-node@10.9.2(@swc/core@1.4.17)(@types/node@20.12.8)(typescript@5.3.3))
       ts-node:
         specifier: ^10.9.2
@@ -304,14 +304,14 @@ packages:
   '@motionone/utils@10.17.0':
     resolution: {integrity: sha512-bGwrki4896apMWIj9yp5rAS2m0xyhxblg6gTB/leWDPt+pb410W8lYWsxyurX+DH+gO1zsQsfx2su/c1/LtTpg==}
 
-  '@nmbrco/components@0.6.0':
-    resolution: {integrity: sha512-ivlVBW4b8Y9Ywm33zru61THZwftAObtrNfLjQ2yQyYkgRorEZ79BR2wA7nw6W1O7mu/KSBqVvi9L5T1ZrudAfQ==}
+  '@nmbrco/components@0.7.0':
+    resolution: {integrity: sha512-ogPLxgIBDHIjiAozMVyM6UovLMxKxRFSX3x7vnQySp6xB66fW/aEq87J7lvgsUx7ACluKmtrynId5XWZYar0jw==}
 
   '@nmbrco/rimless@0.2.3':
     resolution: {integrity: sha512-9W9tpmmkEGb3EvbI96cW9unIRp9MSS3Knkc7YRJPzS6+oWt7pFtFUbtgnCk4iPb/vuHVA337AEGdV60YGiIXQQ==}
 
-  '@nmbrco/sdk@0.5.2-rc.1':
-    resolution: {integrity: sha512-5Qyn0C1gVeZoYnYAIbPLa1Nb5Lud6YDVAgTNv2A04S6rdOFI9yvPSY7dWHwTtpf0uRc5ENvQFG2ZnzL5y/cYJA==}
+  '@nmbrco/sdk@0.6.0':
+    resolution: {integrity: sha512-fTn51D4F9jtA5lBiFTFkOzC9oo8NjjYDg3X8ojXwnRL8uf+UKqLO6Q/rL5GpkVuXRPjoUH0nn+L5qy4E5XAl/g==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -763,8 +763,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.4.754:
-    resolution: {integrity: sha512-7Kr5jUdns5rL/M9wFFmMZAgFDuL2YOnanFH4OI4iFzUqyh3XOL7nAGbSlSMZdzKMIyyTpNSbqZsWG9odwLeKvA==}
+  electron-to-chromium@1.4.755:
+    resolution: {integrity: sha512-9nop+3jZxSHIxe1EzEUcjDXzK+3qOv3fY5w0sE88nIZUntbv1aXWmoxGWlklX5XSO4txCpLssWkUSh8RQPovBg==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -1662,7 +1662,7 @@ snapshots:
       hey-listen: 1.0.8
       tslib: 2.6.2
 
-  '@nmbrco/components@0.6.0':
+  '@nmbrco/components@0.7.0':
     dependencies:
       '@nmbrco/rimless': 0.2.3
       eventemitter3: 5.0.1
@@ -1675,7 +1675,7 @@ snapshots:
       lodash.set: 4.3.2
       uuid: 7.0.3
 
-  '@nmbrco/sdk@0.5.2-rc.1(monocle-ts@2.3.13(fp-ts@2.16.5))(newtype-ts@0.3.5(fp-ts@2.16.5)(monocle-ts@2.3.13(fp-ts@2.16.5)))':
+  '@nmbrco/sdk@0.6.0(monocle-ts@2.3.13(fp-ts@2.16.5))(newtype-ts@0.3.5(fp-ts@2.16.5)(monocle-ts@2.3.13(fp-ts@2.16.5)))':
     dependencies:
       '@openapi-io-ts/runtime': 0.3.1(fp-ts@2.16.5)(io-ts@2.2.21(fp-ts@2.16.5))
       date-fns: 3.6.0
@@ -1970,7 +1970,7 @@ snapshots:
   browserslist@4.23.0:
     dependencies:
       caniuse-lite: 1.0.30001615
-      electron-to-chromium: 1.4.754
+      electron-to-chromium: 1.4.755
       node-releases: 2.0.14
       update-browserslist-db: 1.0.14(browserslist@4.23.0)
 
@@ -2073,7 +2073,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.4.754: {}
+  electron-to-chromium@1.4.755: {}
 
   emoji-regex@8.0.0: {}
 
