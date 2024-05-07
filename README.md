@@ -1,24 +1,20 @@
 # Hello Payroll
 
-## Quickstart [![Run on Replit](https://replit.com/badge/github/nmbrco/hello-payroll)](https://replit.com/github/nmbrco/hello-payroll)
+## Quickstart [![Run on Replit](https://replit.com/badge/github/nmbrco/hello-payroll)](https://replit.com/@aidan-at-nmbr/hello-payroll)
 
-Once you've opened this package in Replit:
+Once you've opened this package in Replit, you can "Run" the project once you set the following environment variables in "Secrets":
 
-- Make sure to select the "Blank REPL" template when importing:
-  <img width="695" alt="image" src="https://github.com/nmbrco/hello-payroll/assets/721128/70b4a1a0-5ecb-4168-9d49-35da8bfa4a21">
-
-- Set the following environment variables in "Secrets" (bottom-left corner)
     - `NMBR_API_KEY`
     - `NMBR_API_SECRET`
     - `NMBR_PARTNER_ID`
-  <img width="968" alt="image" src="https://github.com/nmbrco/hello-payroll/assets/721128/5c0f8332-ddb1-4aed-8c75-e79f2ec46a90">
 
-- Run the Repl (big button in the top middle of the screen)
-  <img width="1563" alt="image" src="https://github.com/nmbrco/hello-payroll/assets/721128/772c14ed-4276-4d58-8c14-e7980dc54f1d">
+Here's how to find or generate these values from the Nmbr Partner Portal:
 
-- Open the Webview in a new tab
+[![Loom Demo - Getting Started with Nmbr Components' Hello Payroll on Replit](https://www.loom.com/share/3c70c7c36748456ea94d231cf3ef23b2)](https://www.loom.com/share/3c70c7c36748456ea94d231cf3ef23b2)
 
-Then make any edits you'd like in the files, and refresh the tab to see the changes
+Then make any edits you'd like in the files, and refresh the tab to see the changes.
+
+For more about Nmbr Components, see [our documentation](https://docs.nmbr.co/docs/payroll-quickstart).
 
 ## Prerequisites
 
