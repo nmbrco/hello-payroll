@@ -12,11 +12,11 @@ importers:
         specifier: ^1.6.4
         version: 1.6.4
       '@nmbrco/components':
-        specifier: 0.7.0
-        version: 0.7.0
+        specifier: 0.7.1
+        version: 0.7.1
       '@nmbrco/sdk':
-        specifier: 0.6.0
-        version: 0.6.0(monocle-ts@2.3.13(fp-ts@2.16.5))(newtype-ts@0.3.5(fp-ts@2.16.5)(monocle-ts@2.3.13(fp-ts@2.16.5)))
+        specifier: 0.6.1
+        version: 0.6.1(monocle-ts@2.3.13(fp-ts@2.16.5))(newtype-ts@0.3.5(fp-ts@2.16.5)(monocle-ts@2.3.13(fp-ts@2.16.5)))
       cookie-parser:
         specifier: ^1.4.6
         version: 1.4.6
@@ -304,14 +304,14 @@ packages:
   '@motionone/utils@10.17.0':
     resolution: {integrity: sha512-bGwrki4896apMWIj9yp5rAS2m0xyhxblg6gTB/leWDPt+pb410W8lYWsxyurX+DH+gO1zsQsfx2su/c1/LtTpg==}
 
-  '@nmbrco/components@0.7.0':
-    resolution: {integrity: sha512-ogPLxgIBDHIjiAozMVyM6UovLMxKxRFSX3x7vnQySp6xB66fW/aEq87J7lvgsUx7ACluKmtrynId5XWZYar0jw==}
+  '@nmbrco/components@0.7.1':
+    resolution: {integrity: sha512-HzlifEArauMMYRWluMd47W0UVBsUkDNyo7FHyvzv9x6sKAMQyycBiSSSCt620sfpuhM/f5ACmo/+1M407ie3Qg==}
 
   '@nmbrco/rimless@0.2.3':
     resolution: {integrity: sha512-9W9tpmmkEGb3EvbI96cW9unIRp9MSS3Knkc7YRJPzS6+oWt7pFtFUbtgnCk4iPb/vuHVA337AEGdV60YGiIXQQ==}
 
-  '@nmbrco/sdk@0.6.0':
-    resolution: {integrity: sha512-fTn51D4F9jtA5lBiFTFkOzC9oo8NjjYDg3X8ojXwnRL8uf+UKqLO6Q/rL5GpkVuXRPjoUH0nn+L5qy4E5XAl/g==}
+  '@nmbrco/sdk@0.6.1':
+    resolution: {integrity: sha512-/cIIklYoFNNAK8ycVJ2fvhlfyW89jWj4ymyZNQxMaPfciLB1CbzI8w75DcxylGkzZznXrzvkD68+ePuhCuafAw==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1662,7 +1662,7 @@ snapshots:
       hey-listen: 1.0.8
       tslib: 2.6.2
 
-  '@nmbrco/components@0.7.0':
+  '@nmbrco/components@0.7.1':
     dependencies:
       '@nmbrco/rimless': 0.2.3
       eventemitter3: 5.0.1
@@ -1675,7 +1675,7 @@ snapshots:
       lodash.set: 4.3.2
       uuid: 7.0.3
 
-  '@nmbrco/sdk@0.6.0(monocle-ts@2.3.13(fp-ts@2.16.5))(newtype-ts@0.3.5(fp-ts@2.16.5)(monocle-ts@2.3.13(fp-ts@2.16.5)))':
+  '@nmbrco/sdk@0.6.1(monocle-ts@2.3.13(fp-ts@2.16.5))(newtype-ts@0.3.5(fp-ts@2.16.5)(monocle-ts@2.3.13(fp-ts@2.16.5)))':
     dependencies:
       '@openapi-io-ts/runtime': 0.3.1(fp-ts@2.16.5)(io-ts@2.2.21(fp-ts@2.16.5))
       date-fns: 3.6.0

@@ -28,8 +28,8 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.4",
-    "@nmbrco/components": "0.7.0",
-    "@nmbrco/sdk": "0.6.0",
+    "@nmbrco/components": "0.7.1",
+    "@nmbrco/sdk": "0.6.1",
     "cookie-parser": "^1.4.6",
     "express": "^4.19.2",
     "js-cookie": "^3.0.5",
